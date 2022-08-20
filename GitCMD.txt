@@ -1,5 +1,7 @@
 <-XXX->   /*Your things*/
 
+Workspace -- Cache area (Stage) -- Master（Modify-- Add--Commit）
+
 $ git config --global user.name "<-Your Name->"
 $ git config --global user.email "<-email@example.com->”
 
@@ -24,6 +26,36 @@ Ls or dir  /*View files in the current directory*/
 /*View the current workspace status*/
 $ git status
 
-/*See how the file added to the repository differs from the previous file*/
+/*See how the files modified in the current workspace differ from the files previously committed to the repository(Workspaces and repositories)*/
 $ git diff <-file_name->
+
+/*Displays the commit log from most recent to most distant*/
+$ git log
+$ git log --pretty=oneline  /*Simplified version log*/
+
+/*Go back to the last submitted version*/
+$ git reset --hard HEAD^
+
+/*Go back to Version No.*/
+$ git reset --hard <-Submission Version No.-> 
+
+
+/*View the contents of the current version （The content that the workspace saved but did not add is also displayed）*/
+$ cat <-file_name->
+
+/*View the history of HEAD changes*/
+$ git reflog
+
+/*Take the file back to the last Git Commit or git Add*/
+$ git restore --staged <-file_name-> or  $ git reset HEAD <-file_name->/*discard changes in stage*/
+$ git restore   <-file_name->  or $ git checkout -- <-file_name-> /*discard changes in working directory*/
+
+/*Remove the file from the repository and place it in your workspace(working directory)*/
+$ rm <-file_name->
+then
+if delete
+$ git rm <-file_name->
+$ git commit -m "remove <-file_name->"
+if  restore
+$ git restore   <-file_name->  or $ git checkout -- <-file_name-> /*discard changes in working directory*/
 
