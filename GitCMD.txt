@@ -57,5 +57,5 @@ if delete
 $ git rm <-file_name->
 $ git commit -m "remove <-file_name->"
 if  restore
-$ git restore   <-file_name->  or $ git checkout -- <-file_name-> /*discard changes in working directory*/
+$ git restore   <-file_name->  or $ git checkout -- <-file_name-> 
 
