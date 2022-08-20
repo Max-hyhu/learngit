@@ -1,0 +1,29 @@
+<-XXX->   /*Your things*/
+
+$ git config --global user.name "<-Your Name->"
+$ git config --global user.email "<-email@example.com->”
+
+/*Create a repository*/
+$ mkdir <-directory_name->
+$ cd <-directory_name->
+
+/*Dispaly current directory*/
+$ pwd
+
+/*Turn the current directory into a repository that Git can manage*/
+$ git init
+
+/*Add files to the repository*/
+$ git add  <-file_name->
+
+/*Submit the file to the repository*/
+$ git commit -m"<-Submit instructions->"
+
+Ls or dir  /*View files in the current directory*/
+
+/*View the current workspace status*/
+$ git status
+
+/*See how the file added to the repository differs from the previous file*/
+$ git diff <-file_name->
+
