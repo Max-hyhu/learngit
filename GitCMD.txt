@@ -1,6 +1,6 @@
 <-XXX->   /*Your things*/
 
-Workspace -- Cache area (Stage) -- Master（Modify-- Add--Commit）
+Workspace -- Cache area (Stage) -- Master /（Modify-- Add--Commit）
 Master points to the committed and HEAD points to the current branch
 
 $ git config --global user.name "<-Your Name->"
