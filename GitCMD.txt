@@ -1,13 +1,17 @@
 <-XXX->   /*Your things*/
 
 Workspace -- Cache area (Stage) -- Master（Modify-- Add--Commit）
+Master points to the committed and HEAD points to the current branch
 
 $ git config --global user.name "<-Your Name->"
 $ git config --global user.email "<-email@example.com->”
 
 /*Create a repository*/
 $ mkdir <-directory_name->
+
+/*Jump from the current directory to the specified directory*/
 $ cd <-directory_name->
+$ cd ~<-directory_name->  <-Jump to the parent directory->
 
 /*Dispaly current directory*/
 $ pwd
@@ -59,3 +63,78 @@ $ git commit -m "remove <-file_name->"
 if  restore
 $ git restore   <-file_name->  or $ git checkout -- <-file_name-> 
 
+/*Delete folders or directories(strong)*/
+$ rm -fr <-directory_name->
+
+/*Create a SSH Key*/
+$ ssh-keygen -t rsa -C "<-email@example.com->"
+
+/*Content from the local repository is pushed to the GitHub repository*/
+$ git remote add origin git@github.com:<-GitHub the repository-> (Associating a remote library)
+$ git push -u origin <-Current  branch name-> /*-u parameter associates the content of the local branch with that of the remote branch*/
+After using the -u parameter
+$ git push origin <-Current  branch name->
+
+/*Viewing the Remote Repository inf*/
+$ git remote -v
+
+/*Deleting a Remote Library*/
+$ git remote rm origin(Remote Library)
+
+/*Clone the remote library to the current directory*/
+$ git clone git@github.com:<-GitHub the repository->
+
+/*Create a branch and switch*/
+$ git checkout -b <-branch name->
+$ git switch -c <-branch name->
+==
+$ git branch <-branch name->
+$ git checkout <-branch name-> or $ git switch <-branch name->
+
+/*view the branch*/
+$ git branch
+
+/*merge the branch(Merges the specified branch to the current branch)*/
+$ git merge <-branch name->
+
+/*delete the branch*/
+$ git branch -d <-branch name->
+$$ git branch -D <-branch name->(strong)
+
+/*View the branch merge diagram*/
+$ git log --graph --pretty=oneline --abbrev-commit
+
+/*Disabling Fast forward merging*/
+$ git merge --no-ff -m "merge with no-ff" <-branch name->
+
+/*Store your current work site*/
+$ git stash
+
+/*view the stash list*/
+$ git stash list
+
+/*restore stash*/
+$ git stash apply
+
+/*delete the stash*/
+$ git stash drop
+
+/* Delete the contents of Stash when restoring*/
+$ git stash pop
+
+/*Copies a specific commit to the current branch*/
+$ git cherry-pick <-Submit code->
+
+/*Create the dev branch of the remote Origin to the local*/
+$ git checkout -b dev origin/dev
+/*Specifies the link between the local dev branch and the remote Origin /dev branch*/
+$ git branch --set-upstream-to=origin/dev de
+
+/*Push submissions to the Origin /dev branch*/
+$ git push origin dev
+
+/*Grab the latest commit for the current branch from Origin /dev*/
+$ git pull
+
+/*Organize the forked commit history into a straight line*/
+$ git rebase
